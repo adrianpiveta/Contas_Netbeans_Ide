@@ -5,7 +5,7 @@
 package Principal;
 
 /**
- *
+ *Classe de testes
  * @author Suporte
  */
 public class TesteDaConta {
