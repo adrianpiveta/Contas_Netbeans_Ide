@@ -13,10 +13,19 @@ import Principal.*;
  * reais	mais	2%	do	valor	do	seguro.
  * @author danie
  */
-public class ContaCorrente extends Conta implements Tributavel{
+public class ContaCorrente implements Conta, Tributavel{
 
+    private double saldo;
+    private String titular;
+    private String agencia;
+    private int numero;
+    private double taxaSelic;
+    
     public ContaCorrente(double saldo, String titular, int numero, String agencia) {
-        super(saldo, titular, numero, agencia);
+        this.agencia=agencia;
+        this.saldo=saldo;
+        this.titular=titular;
+        this.numero=numero;
     }
 
     @Override
@@ -27,6 +36,33 @@ public class ContaCorrente extends Conta implements Tributavel{
     @Override
     public double getValorImposto() {
         return (getSaldo() * 0.01 + 42 * 1.02);
+    }
+
+    @Override
+    public boolean deposita(double valor) {
+        this.saldo+=valor;
+        return true;
+    }
+
+    @Override
+    public double getSaldo() {
+        return saldo;
+    }
+
+    @Override
+    public boolean saca(double valor) {
+        this.saldo-=valor;
+        return true;
+    }
+
+    @Override
+    public void atualiza(double taxaSelic) {
+        this.taxaSelic=taxaSelic;
+    }
+
+    @Override
+    public String recuperaDadosParaImpressao() {
+        return "teste";
     }
     
 }
