@@ -35,6 +35,14 @@ public abstract class Conta {
     }
     
     /**
+     * Retorna o saldo presente na conta
+     * @return double Saldo
+     */
+    public double getSaldo(){
+        return this.saldo;
+    }
+    
+    /**
      * Classe de saque, na qual o saque é validado e realizado na conta
      * 
      * @return boolean confirmação de saque
