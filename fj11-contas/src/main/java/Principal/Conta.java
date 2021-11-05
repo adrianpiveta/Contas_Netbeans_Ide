@@ -8,7 +8,7 @@ package Principal;
  *Classe de conta bancaria
  * @author Adrian Daniel Piveta
  */
-public class Conta {	
+public abstract class Conta {	
     private double saldo;
     private String titular;
     private int numero;
@@ -18,9 +18,6 @@ public class Conta {
      * Construtor
      * Inicia a classe com o nome do titular
      */
-    Conta(String titular) {
-        this.titular=titular;
-    }
     
     /**
      * Realiza um depósito e a sua validação na classe conta
@@ -50,6 +47,36 @@ public class Conta {
         }
         return false;
     }
+
+    /**
+     *
+     * @param saldo
+     * @param titular
+     * @param numero
+     * @param agencia
+     * @param tipoConta
+     */
+    public Conta(double saldo, String titular, int numero, String agencia) {
+        this.saldo = saldo;
+        this.titular = titular;
+        this.numero = numero;
+        this.agencia = agencia;
+    }
     
+    /**
+     * Retorna o tipo de conta que está sendo chamada por
+     * este método
+     * @return String tipoConta
+     */
+    public abstract String getTipoConta();
+    
+    public	String	recuperaDadosParaImpressao() {
+			String	dados	=	"Titular:	"	+	this.titular;
+			dados	+=	"\nNúmero:	"	+	this.numero;
+			dados	+=	"\nAgência:	"	+	this.agencia;
+			dados	+=	"\nSaldo:	R$"	+	this.saldo;
+                        dados  += "\nTipo: " + this.getTipoConta();
+			return dados;
+    }
     
 }

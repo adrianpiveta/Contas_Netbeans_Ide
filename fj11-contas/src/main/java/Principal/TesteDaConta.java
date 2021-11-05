@@ -11,10 +11,16 @@ package Principal;
 public class TesteDaConta {
 
     public static void main(String[] args) {
-        Conta c1= new Conta("Jose");
+        Conta c1= new ContaPoupanca(22, "ze", 1, "875");
+        Conta c2= new ContaCorrente(22, "ze", 1, "875");
         
         c1.deposita(100);
         
         System.out.println(c1.saca(100));
+        
+        System.out.println(c1.getTipoConta());
+        System.out.println(c2.getTipoConta());
+        
+        System.out.println(c1.recuperaDadosParaImpressao());
     }
 }
