@@ -65,4 +65,9 @@ public class ContaCorrente implements Conta, Tributavel{
         return "teste";
     }
     
+    @Override
+    public String toString(){
+        return this.recuperaDadosParaImpressao();
+    }
+    
 }
