@@ -48,12 +48,12 @@ public abstract class Conta {
      * @return boolean confirmação de saque
      */
     public boolean saca(double valor){
-        if ((saldo-valor)>=0) {
+        if (saldo<valor) {
+            throw new RuntimeException();
+        }else{
             saldo-=valor;
             return true;
-            
         }
-        return false;
     }
 
     /**
