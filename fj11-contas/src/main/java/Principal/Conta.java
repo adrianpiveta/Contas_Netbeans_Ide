@@ -45,11 +45,13 @@ public abstract class Conta {
     /**
      * Classe de saque, na qual o saque é validado e realizado na conta
      * 
+     * @param valor
      * @return boolean confirmação de saque
+     * @throws Principal.SaldoInsulficienteException
      */
-    public boolean saca(double valor){
+    public boolean saca(double valor) throws SaldoInsulficienteException{
         if (saldo<valor) {
-            throw new RuntimeException();
+            throw new SaldoInsulficienteException(saldo);
         }else{
             saldo-=valor;
             return true;

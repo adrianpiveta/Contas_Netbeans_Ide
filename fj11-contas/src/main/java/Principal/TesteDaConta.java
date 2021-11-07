@@ -10,7 +10,7 @@ package Principal;
  */
 public class TesteDaConta {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SaldoInsulficienteException {
         Conta c1= new ContaPoupanca(22, "ze", 1, "875");
         Conta c2= new ContaCorrente(22, "ze", 1, "875");
         
@@ -22,5 +22,12 @@ public class TesteDaConta {
         System.out.println(c2.getTipoConta());
         
         System.out.println(c1.recuperaDadosParaImpressao());
+        
+        try{
+            c1.saca(1000);
+        }
+        catch (IllegalArgumentException e){
+            System.out.println(e);
+        }
     }
 }
