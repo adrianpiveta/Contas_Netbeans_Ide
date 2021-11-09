@@ -24,10 +24,12 @@ public class TesteDaConta {
         System.out.println(c1.recuperaDadosParaImpressao());
         
         try{
-            c1.saca(1000);
+            c1.saca(10);
         }
         catch (IllegalArgumentException e){
             System.out.println(e);
         }
+        
+        
     }
 }

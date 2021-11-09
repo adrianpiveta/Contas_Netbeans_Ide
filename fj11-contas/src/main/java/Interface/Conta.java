@@ -46,4 +46,8 @@ public interface Conta {
     public abstract String getTipoConta();
     
     public abstract String recuperaDadosParaImpressao();
+    
+    
+    public abstract String toString();
+
 }

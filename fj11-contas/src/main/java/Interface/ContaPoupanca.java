@@ -67,4 +67,9 @@ public class ContaPoupanca implements Conta{
     public String recuperaDadosParaImpressao() {
         return "teste";
     }
+    
+    @Override
+    public String toString(){
+        return this.recuperaDadosParaImpressao();
+    }
 }
