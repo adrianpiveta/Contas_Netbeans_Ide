@@ -23,7 +23,7 @@ public class TesteDaConta {
         
         System.out.println(c1.recuperaDadosParaImpressao());
         
-        c2.saca(2222);
+        //c2.saca(2222);
         
         
         try{
@@ -33,6 +33,37 @@ public class TesteDaConta {
             System.out.println(e);
         }
         
-        
+        Conta cc = new ContaCorrente(3, "jose", 11, "33");
+        try{
+                for(int i=0; i<=15; i++){
+                        cc.deposita(i+1000);
+                                  System.err.println(cc.getSaldo());
+                        if(i==5){
+                                cc=null;
+                        }
+                }}
+                catch(NullPointerException e){
+                                  System.out.println("erro: "+e);
+                }
+
+
+
+        for(int i=0; i<=15; i++){
+            try{
+                    cc.deposita(i+1000);
+                    System.out.println(cc.getSaldo());
+                    if(i==5){
+                            cc=null;
+                    }
+        }
+            catch(NullPointerException e){
+                    System.out.println("erro: "+e);
+                    }
+            }
+    
+    //Testando divisão por 0
+    int i=55;
+    i = i/0;
+    System.out.println(i);
     }
 }
