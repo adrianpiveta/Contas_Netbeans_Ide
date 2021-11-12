@@ -30,7 +30,7 @@ public abstract class Conta {
             return true;
         }
         else{
-            return false;
+            throw new IllegalArgumentException("Valor negativo ou zero");
         }
     }
     

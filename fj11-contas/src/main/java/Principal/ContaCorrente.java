@@ -27,4 +27,15 @@ public class ContaCorrente extends Conta implements Tributavel{
         return (getSaldo() * 0.01 + 42 * 1.02);
     }
     
+    @Override
+    public boolean saca(double valorSaque) throws SaldoInsulficienteException{
+        try {
+            super.saca(valorSaque);
+        } catch (Exception e) {
+            throw new SaldoInsulficienteException(valorSaque);
+        }
+        return false;
+ 
+    }
+    
 }

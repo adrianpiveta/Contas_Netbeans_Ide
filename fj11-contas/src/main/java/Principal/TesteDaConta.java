@@ -23,6 +23,9 @@ public class TesteDaConta {
         
         System.out.println(c1.recuperaDadosParaImpressao());
         
+        c2.saca(2222);
+        
+        
         try{
             c1.saca(10);
         }

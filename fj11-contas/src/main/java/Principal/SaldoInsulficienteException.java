@@ -14,8 +14,21 @@ public class SaldoInsulficienteException extends Exception{
         super(mensagem);
     }
 
+    /**
+     * retorna excessão informando que não dá para sacar e mostra saldo 
+     * disponivel
+     * @param saldoDisponivel
+     */
     public SaldoInsulficienteException(double saldoDisponivel) {
-        super("Saldo disponível de: "+saldoDisponivel);
+        super("Saldo disponível de: " + saldoDisponivel);
+    }
+    
+    /**
+     * Retorna excessão para saque informando que não dá para sacar x valor
+     * @param valorSaque
+     */
+    public SaldoInsulficienteException (float valorSaque){
+        super("Impossível sacar R$" + valorSaque );
     }
     
     
