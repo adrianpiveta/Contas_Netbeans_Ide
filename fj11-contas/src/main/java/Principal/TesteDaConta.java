@@ -4,13 +4,18 @@
  */
 package Principal;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *Classe de testes
  * @author Suporte
  */
 public class TesteDaConta {
 
-    public static void main(String[] args) throws SaldoInsulficienteException {
+    public static void main(String[] args) throws SaldoInsulficienteException, FileNotFoundException {
         Conta c1= new ContaPoupanca(22, "ze", 1, "875");
         Conta c2= new ContaCorrente(22, "ze", 1, "875");
         
@@ -65,5 +70,112 @@ public class TesteDaConta {
     int i=55;
     i = i/0;
     System.out.println(i);
+    //tentando abrir arquivo inexistente
+    new	java.io.FileInputStream("arquivo.txt");
+
+    //testando com Try
+    try	{
+            FileInputStream fileInputStream = new	java.io.FileInputStream("arquivo.txt");
     }
+    catch	(java.io.FileNotFoundException	e)	{
+    System.out.println("Nao	foi	possível	abrir	o	arquivo	para	leitura");
+    }
+				}
+
+    //tratando mais de um tipo de erro por vez
+    /*
+    try	{
+		objeto.metodoQuePodeLancarIOeSQLException();
+    } catch	(IOException	e)	{
+    }	catch	(SQLException	e)	{
+    }
+    */
+
+
+    
+    //exceção expecifica
+    /*
+    public	void	saca(double	valor) {
+        if	(main("s")	<	valor)	{
+            throw new	IllegalArgumentException();
+	}	else	{
+            this.saldo-=valor;								
+        }								
+    }
+    */
+
+
+    //retorna a mensagem de erro do java
+    /*
+    try	{
+	cc.saca(100);
+    }	catch	(IllegalArgumentException	e)	{
+	System.out.println(e.getMessage());
+    }
+    */
+
+
+
+    //teste que absorve a excessao e a printa
+    Conta cc = new ContaCorrente(3, "aa", 22, "333");
+    /*
+    try	{
+        try {
+            cc.saca(50);
+            System.out.println("consegui	sacar	da	poupança!");
+        } catch (SaldoInsulficienteException ex) {
+            Logger.getLogger(TesteDaConta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    ;}	catch	(IllegalArgumentException	e)	{
+				System.out.println(e.getMessage());
+    }
+    */
+
+    //agrupamento que printa no caso de qualque erro
+/*
+				cc.saca(50);				
+				System.out.println("consegui	sacar	da	corrente!");
+				cp.saca(50);
+				System.out.println("consegui	sacar	da	poupança!");
+
+
+
+
+//criando a própria exceção
+public class SaldoInsuficienteException extends RuntimeException	{				
+				public	SaldoInsuficienteException(String	message) {
+								super(message);
+				}
+}
+
+
+public	void	saca(double	valor) {
+				if	(this.saldo	<	valor)	{
+								throw new	SaldoInsuficienteException("Saldo	Insuficiente,"	+"tente	um	valor	menor");
+}
+	else	{
+this.saldo-=valor;
+}
+}
+
+
+
+//testando a noss própria exceção
+public	static	void	main(String[]	args) {
+				Conta	cc	=	new	ContaCorrente();
+				cc.deposita(10);								
+				try	{
+								cc.saca(100);
+				}	catch	(SaldoInsuficienteException	e)	{
+								System.out.println(e.getMessage());
+				}
+}
+
+//extendendo try e catch
+//o finally executa independente de cair no try ou no catch
+
+try{}
+catch{}
+finally{}//executa de qualquer forma
+    }*/
 }
