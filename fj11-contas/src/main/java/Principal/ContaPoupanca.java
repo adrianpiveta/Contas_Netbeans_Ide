@@ -22,4 +22,16 @@ public class ContaPoupanca extends Conta{
     public String getTipoConta(){
         return "Poupança";
     }
+    
+    /**
+     * Retorna a comparação entre 2 contas
+     * @param comparacao
+     * @return String semelhançaDeConta
+     */
+    public String comparaConta(Conta comparacao){
+        if(super.compareTo(comparacao)==1){
+            return "contas iguais";
+        }
+        return "contas diferentes";
+    }
 }

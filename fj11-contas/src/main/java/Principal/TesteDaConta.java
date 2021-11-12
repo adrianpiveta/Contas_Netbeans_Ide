@@ -44,7 +44,7 @@ public class TesteDaConta {
                         cc.deposita(i+1000);
                                   System.err.println(cc.getSaldo());
                         if(i==5){
-                                cc=null;
+                                //cc=null;
                         }
                 }}
                 catch(NullPointerException e){
@@ -58,7 +58,7 @@ public class TesteDaConta {
                     cc.deposita(i+1000);
                     System.out.println(cc.getSaldo());
                     if(i==5){
-                            cc=null;
+                            //cc=null;
                     }
         }
             catch(NullPointerException e){
@@ -68,10 +68,10 @@ public class TesteDaConta {
     
     //Testando divisão por 0
     int i=55;
-    i = i/0;
+    //i = i/0;
     System.out.println(i);
     //tentando abrir arquivo inexistente
-    new	java.io.FileInputStream("arquivo.txt");
+    //new	java.io.FileInputStream("arquivo.txt");
 
     //testando com Try
     try	{
@@ -80,7 +80,7 @@ public class TesteDaConta {
     catch	(java.io.FileNotFoundException	e)	{
     System.out.println("Nao	foi	possível	abrir	o	arquivo	para	leitura");
     }
-				}
+				
 
     //tratando mais de um tipo de erro por vez
     /*
@@ -105,31 +105,19 @@ public class TesteDaConta {
     */
 
 
-    //retorna a mensagem de erro do java
-    /*
-    try	{
-	cc.saca(100);
-    }	catch	(IllegalArgumentException	e)	{
-	System.out.println(e.getMessage());
-    }
-    */
+    
 
 
 
     //teste que absorve a excessao e a printa
-    Conta cc = new ContaCorrente(3, "aa", 22, "333");
-    /*
-    try	{
+    
+    
         try {
             cc.saca(50);
             System.out.println("consegui	sacar	da	poupança!");
         } catch (SaldoInsulficienteException ex) {
-            Logger.getLogger(TesteDaConta.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
-    ;}	catch	(IllegalArgumentException	e)	{
-				System.out.println(e.getMessage());
-    }
-    */
 
     //agrupamento que printa no caso de qualque erro
 /*
@@ -178,4 +166,13 @@ try{}
 catch{}
 finally{}//executa de qualquer forma
     }*/
+    Conta teste1= new ContaCorrente(4, "jose almirao", 1, "33");
+    ContaPoupanca teste2= new ContaPoupanca(4, "jose almiro", 1, "33");
+    ContaPoupanca teste3= new ContaPoupanca(4, "jose almiro", 1, "33");
+    System.out.println(teste2.comparaConta(teste1) );
+          
+
+
+    
+}
 }

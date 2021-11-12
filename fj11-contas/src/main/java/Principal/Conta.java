@@ -5,10 +5,10 @@
 package Principal;
 
 /**
- *Classe de conta bancaria
+ * Classe de conta bancaria
  * @author Adrian Daniel Piveta
  */
-public abstract class Conta {	
+public abstract class Conta implements Comparable<Conta>{	
     private double saldo;
     private String titular;
     private int numero;
@@ -88,5 +88,12 @@ public abstract class Conta {
                         dados  += "\nTipo: " + this.getTipoConta();
 			return dados;
     }
-    
+
+    @Override
+    public int compareTo(Conta o) {
+        if((this.titular.toLowerCase()) == (o.titular.toLowerCase()) ){
+            return 1;
+        }
+        return 0;
+    }
 }
