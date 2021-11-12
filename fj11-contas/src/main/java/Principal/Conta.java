@@ -91,9 +91,7 @@ public abstract class Conta implements Comparable<Conta>{
 
     @Override
     public int compareTo(Conta o) {
-        if((this.titular.toLowerCase()) == (o.titular.toLowerCase()) ){
-            return 1;
-        }
-        return 0;
+        return this.titular.compareTo(o.titular);
+    
     }
 }
