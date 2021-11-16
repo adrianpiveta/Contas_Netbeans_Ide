@@ -4,6 +4,8 @@
  */
 package Principal;
 
+import java.util.LinkedList;
+
 /**
  * Classe de conta bancaria
  * @author Adrian Daniel Piveta
@@ -13,6 +15,7 @@ public abstract class Conta implements Comparable<Conta>{
     private String titular;
     private int numero;
     private String agencia;
+    private LinkedList<Conta> contas;
 
     /**
      * Construtor
@@ -92,6 +95,21 @@ public abstract class Conta implements Comparable<Conta>{
     @Override
     public int compareTo(Conta o) {
         return this.titular.compareTo(o.titular);
+    }
     
+    public void adiciona(Conta c){
+        this.contas.add(c);
+    }
+    
+    public Conta pega(int id){
+        try {
+            return this.contas.get(id);
+        } catch (IndexOutOfBoundsException e) {
+            return null;
+        }
+    }
+    
+    public int pegaQuantidadeDeContas(){
+        return contas.size();
     }
 }
