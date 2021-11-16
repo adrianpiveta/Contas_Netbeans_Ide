@@ -17,7 +17,7 @@ public class ContaCorrente extends Conta implements Tributavel{
         super(saldo, titular, numero, agencia);
     }
 
-    public ContaCorrente() {
+    public ContaCorrente(int nada) {
         super(0, "Alguem", 0, "000");
     }
 
