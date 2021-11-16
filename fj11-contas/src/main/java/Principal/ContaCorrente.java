@@ -17,6 +17,10 @@ public class ContaCorrente extends Conta implements Tributavel{
         super(saldo, titular, numero, agencia);
     }
 
+    public ContaCorrente() {
+        super(0, "Alguem", 0, "000");
+    }
+
     @Override
     public String getTipoConta() {
         return "Corrente";
