@@ -4,6 +4,7 @@
  */
 package Principal;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
@@ -16,6 +17,7 @@ public abstract class Conta implements Comparable<Conta>{
     private int numero;
     private String agencia;
     private LinkedList<Conta> contas;
+    private HashMap<String, Conta> mapaContas;
 
     /**
      * Construtor
@@ -74,6 +76,8 @@ public abstract class Conta implements Comparable<Conta>{
         this.titular = titular;
         this.numero = numero;
         this.agencia = agencia;
+        mapaContas.put(titular, this);
+       
     }
     
     /**
@@ -112,4 +116,15 @@ public abstract class Conta implements Comparable<Conta>{
     public int pegaQuantidadeDeContas(){
         return contas.size();
     }
+    
+    public Conta getConta(String nomeTitular){
+        return mapaContas.get(nomeTitular);
+    }
+
+    public int hashCode() {
+        String conta=agencia+numero;
+        return (conta.hashCode()); 
+    }
+    
+    
 }
