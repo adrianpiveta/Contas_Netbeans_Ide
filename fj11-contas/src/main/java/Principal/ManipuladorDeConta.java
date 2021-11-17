@@ -12,6 +12,9 @@ import java.util.List;
  * @author danie
  */
 public class ManipuladorDeConta {
+
+    public ManipuladorDeConta() {
+    }
     
     public	void	ordenaLista(Evento	evento) {
         List<Conta>	contas	=	evento.getLista("destino");
@@ -24,9 +27,17 @@ public class ManipuladorDeConta {
         }
 
         private List<Conta> getLista(String destino) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            return this.getLista(destino);
         }
+        
+     
     }
-
-    
+       public  boolean salvaDados(List dados){
+           try {
+              new  RespositorioDeContas(dados);
+              return true;
+           } catch (Exception e) {
+               return false;
+           }
+        }
 }

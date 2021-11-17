@@ -17,7 +17,7 @@ public abstract class Conta implements Comparable<Conta>{
     private int numero;
     private String agencia;
     private LinkedList<Conta> contas;
-    private HashMap<String, Conta> mapaContas;
+    private HashMap<String, Conta> mapaContas= new HashMap<>();
 
     /**
      * Construtor
@@ -124,6 +124,18 @@ public abstract class Conta implements Comparable<Conta>{
     public int hashCode() {
         String conta=agencia+numero;
         return (conta.hashCode()); 
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public String getAgencia() {
+        return agencia;
     }
     
     

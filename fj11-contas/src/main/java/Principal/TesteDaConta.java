@@ -6,6 +6,8 @@ package Principal;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,6 +18,7 @@ import java.util.logging.Logger;
 public class TesteDaConta {
 
     public static void main(String[] args) throws SaldoInsulficienteException, FileNotFoundException {
+        /*
         Conta c1= new ContaPoupanca(22, "ze", 1, "875");
         Conta c2= new ContaCorrente(22, "ze", 1, "875");
         
@@ -111,14 +114,14 @@ public class TesteDaConta {
 
     //teste que absorve a excessao e a printa
     
-    
+/*    
         try {
             cc.saca(50);
             System.out.println("consegui	sacar	da	poupança!");
         } catch (SaldoInsulficienteException ex) {
             System.out.println(ex);
         }
-
+*/
     //agrupamento que printa no caso de qualque erro
 /*
 				cc.saca(50);				
@@ -167,12 +170,17 @@ catch{}
 finally{}//executa de qualquer forma
     }*/
     Conta teste1= new ContaCorrente(4, "jose almirao", 1, "33");
-    ContaPoupanca teste2= new ContaPoupanca(4, "jose almiro", 1, "33");
+    ContaPoupanca teste2= new ContaPoupanca(4, "jose almiroso", 1, "33");
     ContaPoupanca teste3= new ContaPoupanca(4, "jose almiro", 1, "33");
-    System.out.println(teste2.comparaConta(teste1) );
+    //System.out.println(teste2.comparaConta(teste1) );
           
-
-
+   List<Conta> contas = new ArrayList<Conta>();
+   contas.add(teste1);
+   contas.add(teste2);
+   contas.add(teste3);
+   ManipuladorDeConta m1=new ManipuladorDeConta();
+        System.out.println(m1.salvaDados(contas));
+    
     
 }
 }
