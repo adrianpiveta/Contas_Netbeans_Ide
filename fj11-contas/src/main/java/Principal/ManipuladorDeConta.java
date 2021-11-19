@@ -34,10 +34,18 @@ public class ManipuladorDeConta {
     }
        public  boolean salvaDados(List dados){
            try {
-              new  RespositorioDeContas(dados);
+              new  RepositorioDeContas(dados);
               return true;
            } catch (Exception e) {
                return false;
            }
         }
+       
+       public List<Conta> listaContas(){
+           try {
+               return (new RepositorioDeContas().carregaContas());
+           } catch (Exception e) {
+               return (List<Conta>) e;
+           }
+       }
 }

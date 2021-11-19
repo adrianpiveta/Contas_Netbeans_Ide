@@ -180,7 +180,12 @@ finally{}//executa de qualquer forma
    contas.add(teste3);
    ManipuladorDeConta m1=new ManipuladorDeConta();
         System.out.println(m1.salvaDados(contas));
+        List<Conta> contasr = m1.listaContas();
+        for (int i = 0; i < m1.listaContas().size(); i++) {
+            System.out.println(contasr.get(i).toString());
+            
+        }
+        
     
-    
-}
+    }
 }

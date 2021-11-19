@@ -138,5 +138,13 @@ public abstract class Conta implements Comparable<Conta>{
         return agencia;
     }
     
+    @Override
+    public String toString(){
+        return "titular: "+this.titular +
+                "\n agencia: "  + this.agencia +
+                "\n saldo: " + this.saldo +
+                "\n";
+    }
+    
     
 }
